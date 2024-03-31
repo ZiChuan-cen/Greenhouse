@@ -1,23 +1,28 @@
+
+供电：锂电池
+显示：oled		IIC1	PB6	PB7
+通讯：Zigbee模块		Usart3	PB10	PB11
+联网：esp-01s		Usart1	PA9	PA10
+光敏：bh1750
+气体：sgp30
+温湿度：dht11		PB0
+土壤温度：防水ds18b20	PB1
+大气压：BMP180	
+土壤湿度：
+控制：矩阵键盘
+
+
+
+
+
 主控板
-oled		IIC1	PB6	PB7
-Zigbee模块	Usart3	PB10	PB11
-esp-01s		Usart1	PA9	PA10
-光照
-二氧化碳
-dht11		PB0
-防水ds18b20	PB1
-bh1750
-sgp30	
-BMP180	
+显示、联网、通讯
 
 采集板
-Zigbee模块
-光照
-二氧化碳
-dht11
-防水ds18b20
-bh1750
-sgp30
-土壤湿度
+通讯、光敏、气体、温湿度、土壤温湿度、大气压、
+
+
+
+
 
 我准备做一个项目，分为上位机与下位机，主控芯片采用stm32f103c8t6,上位机与下位机之间的通讯通过Zigbee模块来执行，上位机有四针IIC OLED 屏显示，通过串口来控制Zigbee与ESP-01s；下位机也是通过串口控制Zigbee，同时还有BH1750光照模块，通过IIC控制，二氧化碳检测通过SGP30，有DHT11，DS18B20，土壤湿度检测
