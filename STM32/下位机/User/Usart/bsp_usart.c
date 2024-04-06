@@ -8,7 +8,6 @@
   */
 
 #include "bsp_usart.h"
-#include "stdio.h"
 
 
 

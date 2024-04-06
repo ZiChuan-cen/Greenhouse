@@ -62,6 +62,18 @@ void USART3_IRQHandler(void)
 }
 
 
+
+//void USART3_IRQHandler(void)
+//{
+//    if(USART_GetITStatus(USART3, USART_IT_RXNE) != RESET)
+//    {
+//        uint8_t data = USART_ReceiveData(USART3);
+//        // 在这里处理接收到的数据
+//    }
+//}
+
+
+
 uint16_t CO2_Get(void)
 {
     u16 CO2;

@@ -2,6 +2,7 @@
 #define __BSP_USART_H
 
 #include "stm32f10x.h"                  // Device header
+#include "stdio.h"
 
 #define USART1_GPIO_CLK				RCC_APB2Periph_GPIOA
 #define USART1_CLK					RCC_APB2Periph_USART1
