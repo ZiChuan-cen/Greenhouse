@@ -336,7 +336,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_MD,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\Libraries\CMSIS;..\Libraries\STM32F10x_StdPeriph_Driver\inc;..\User;..\User\Usart;..\User\delay;..\User\sys;..\Device\BMP180;..\Device\BH1750;..\Device\OLED;..\Device\DHT11;..\Device\SoilHum</IncludePath>
+              <IncludePath>..\Libraries\CMSIS;..\Libraries\STM32F10x_StdPeriph_Driver\inc;..\User;..\User\Usart;..\User\delay;..\User\sys;..\Device\BMP180;..\Device\BH1750;..\Device\OLED;..\Device\DHT11;..\Device\SoilHum;..\Device\DS18B20;..\Device\CO2;..\Device\ZigBee</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -546,11 +546,6 @@
               <FilePath>..\Device\BMP180\BMP180.c</FilePath>
             </File>
             <File>
-              <FileName>myiic.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Device\BMP180\myiic.c</FilePath>
-            </File>
-            <File>
               <FileName>BH1750.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Device\BH1750\BH1750.c</FilePath>
@@ -564,6 +559,26 @@
               <FileName>soil_hum.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Device\SoilHum\soil_hum.c</FilePath>
+            </File>
+            <File>
+              <FileName>myiic.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Device\BMP180\myiic.c</FilePath>
+            </File>
+            <File>
+              <FileName>ds18b20.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Device\DS18B20\ds18b20.c</FilePath>
+            </File>
+            <File>
+              <FileName>Zigbee.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Device\ZigBee\Zigbee.c</FilePath>
+            </File>
+            <File>
+              <FileName>Jw01.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Device\CO2\Jw01.c</FilePath>
             </File>
           </Files>
         </Group>
