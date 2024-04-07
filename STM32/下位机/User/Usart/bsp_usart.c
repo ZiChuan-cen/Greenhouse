@@ -84,42 +84,44 @@ void Usart2_Config(void)
     USART_Cmd(USART2, ENABLE); //使能串口
 }
 
-/**
-    * @brief  配置USART3
-    * @pin    UART3_TX:PB10     UART3_RX:PB11
-    * @param  无
-    * @retval 无
-    */
-void Usart3_Config(void)
-{
-    /*********************************** 配置GPIO ***********************************/
-    RCC_APB2PeriphClockCmd(USART3_GPIO_CLK, ENABLE);
-    GPIO_InitTypeDef GPIO_InitStructure;
-    //PB10  USART3_TX
-    GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_AF_PP;    //复用推挽输出
-    GPIO_InitStructure.GPIO_Pin   = USART3_TX_Pin;
-    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-    GPIO_Init(USART3_TX_PORT, &GPIO_InitStructure);     //初始化寄存器
 
-    //PB11  USART3_RX
-    GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_IN_FLOATING;  //浮空输入
-    GPIO_InitStructure.GPIO_Pin   = USART3_RX_Pin;
-    GPIO_Init(USART3_RX_PORT, &GPIO_InitStructure);     //初始化寄存器
 
-    /*********************************** 配置串口 ***********************************/
-    RCC_APB1PeriphClockCmd(USART3_CLK, ENABLE);
-    USART_InitTypeDef USART_InitStructure;
+///**
+//    * @brief  配置USART3
+//    * @pin    UART3_TX:PB10     UART3_RX:PB11
+//    * @param  无
+//    * @retval 无
+//    */
+//void Usart3_Config(void)
+//{
+//    /*********************************** 配置GPIO ***********************************/
+//    RCC_APB2PeriphClockCmd(USART3_GPIO_CLK, ENABLE);
+//    GPIO_InitTypeDef GPIO_InitStructure;
+//    //PB10  USART3_TX
+//    GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_AF_PP;    //复用推挽输出
+//    GPIO_InitStructure.GPIO_Pin   = USART3_TX_Pin;
+//    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+//    GPIO_Init(USART3_TX_PORT, &GPIO_InitStructure);     //初始化寄存器
 
-    USART_InitStructure.USART_BaudRate  =   115200;
-    USART_InitStructure.USART_HardwareFlowControl   =   DISABLE;
-    USART_InitStructure.USART_Mode  =   USART_Mode_Rx | USART_Mode_Tx;
-    USART_InitStructure.USART_Parity    =   USART_Parity_No;
-    USART_InitStructure.USART_StopBits  =   USART_StopBits_1;
-    USART_InitStructure.USART_WordLength    =   USART_WordLength_8b;
+//    //PB11  USART3_RX
+//    GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_IN_FLOATING;  //浮空输入
+//    GPIO_InitStructure.GPIO_Pin   = USART3_RX_Pin;
+//    GPIO_Init(USART3_RX_PORT, &GPIO_InitStructure);     //初始化寄存器
 
-    USART_Init(USART3, &USART_InitStructure);   //初始化寄存器
-    USART_Cmd(USART3, ENABLE);  //使能串口
-}
+//    /*********************************** 配置串口 ***********************************/
+//    RCC_APB1PeriphClockCmd(USART3_CLK, ENABLE);
+//    USART_InitTypeDef USART_InitStructure;
+
+//    USART_InitStructure.USART_BaudRate  =   115200;
+//    USART_InitStructure.USART_HardwareFlowControl   =   DISABLE;
+//    USART_InitStructure.USART_Mode  =   USART_Mode_Rx | USART_Mode_Tx;
+//    USART_InitStructure.USART_Parity    =   USART_Parity_No;
+//    USART_InitStructure.USART_StopBits  =   USART_StopBits_1;
+//    USART_InitStructure.USART_WordLength    =   USART_WordLength_8b;
+
+//    USART_Init(USART3, &USART_InitStructure);   //初始化寄存器
+//    USART_Cmd(USART3, ENABLE);  //使能串口
+//}
 
 
 
