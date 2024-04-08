@@ -44,6 +44,7 @@ void Usart1_Config(void)
     USART_InitStructure.USART_WordLength = USART_WordLength_8b;
 
     USART_Init(USART1, &USART_InitStructure); //初始化寄存器
+
     USART_Cmd(USART1, ENABLE); //使能串口
 }
 
@@ -81,6 +82,19 @@ void Usart2_Config(void)
     USART_InitStructure.USART_WordLength = USART_WordLength_8b;
 
     USART_Init(USART2, &USART_InitStructure); //初始化寄存器
+
+
+    USART_ITConfig(USART2, USART_IT_RXNE, ENABLE);
+
+    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
+
+    NVIC_InitTypeDef    NVIC_InitStructure;
+    NVIC_InitStructure.NVIC_IRQChannel = USART2_IRQn;
+    NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 2;
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 2;
+
+    NVIC_Init(&NVIC_InitStructure);
     USART_Cmd(USART2, ENABLE); //使能串口
 }
 

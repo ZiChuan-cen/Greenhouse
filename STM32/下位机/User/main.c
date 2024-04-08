@@ -52,7 +52,7 @@ static void BSP_Init(void)
 
     Usart1_Config();
 
-	Zigbee_Init();
+    Zigbee_Init();
 
 
 }
