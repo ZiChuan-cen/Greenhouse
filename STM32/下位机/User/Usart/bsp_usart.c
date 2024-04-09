@@ -36,7 +36,7 @@ void Usart1_Config(void)
     RCC_APB2PeriphClockCmd(USART1_CLK, ENABLE);  //开启串口时钟
     USART_InitTypeDef USART_InitStructure = {0};
 
-    USART_InitStructure.USART_BaudRate = 115200;  //波特率
+    USART_InitStructure.USART_BaudRate = 9600;  //波特率
     USART_InitStructure.USART_HardwareFlowControl = DISABLE;
     USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
     USART_InitStructure.USART_Parity = USART_Parity_No;  //不使用奇偶校验

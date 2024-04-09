@@ -21,6 +21,12 @@ void USART2_IRQHandler(void)
 
 
         USART_ClearITPendingBit(USART2, USART_IT_RXNE);
+
+        index++;
+        if (index >= sizeof(Zigbee_RX_buff) / sizeof(Zigbee_RX_buff[0]))
+        {
+            index = 0;
+        }
     }
 
 
