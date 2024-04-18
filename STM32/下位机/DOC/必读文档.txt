@@ -30,7 +30,7 @@ STM32F103C8系列芯片工程模板
 
 ***		BH1750光照模块：使用I2C1，将PB6（I2C1_SCL）和PB7（I2C1_SDA）
 
-***		二氧化碳检测模块（Jw01）：使用USART1，将PB10（USART1_TX）和PB11（USART1_RX）
+***     二氧化碳检测模块（Jw01）：使用USART1
 
 ***		DHT11模块：使用单线接口，选择GPIO引脚PA11
 

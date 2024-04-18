@@ -7,7 +7,7 @@
 
   <Targets>
     <Target>
-      <TargetName>工程模板</TargetName>
+      <TargetName>主控板</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
       <pCCUsed>5060528::V5.06 update 5 (build 528)::ARMCC</pCCUsed>
@@ -336,7 +336,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_MD,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\Libraries\CMSIS;..\Libraries\STM32F10x_StdPeriph_Driver\inc;..\User;..\User\Usart;..\User\delay;..\User\sys</IncludePath>
+              <IncludePath>..\Libraries\CMSIS;..\Libraries\STM32F10x_StdPeriph_Driver\inc;..\User;..\User\Usart;..\User\delay;..\User\sys;..\Device</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -539,6 +539,23 @@
         </Group>
         <Group>
           <GroupName>Device</GroupName>
+          <Files>
+            <File>
+              <FileName>key.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Device\key.c</FilePath>
+            </File>
+            <File>
+              <FileName>OLED.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Device\OLED.c</FilePath>
+            </File>
+            <File>
+              <FileName>Zigbee.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Device\Zigbee.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>USER</GroupName>
