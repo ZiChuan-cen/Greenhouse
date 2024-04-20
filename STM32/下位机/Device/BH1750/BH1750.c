@@ -234,7 +234,7 @@ void BH1750_Read_Com(void)
 /**
     * @brief  获取光照度
     * @param  无
-* @retval temp2:处理后的数据        temp2:
+    * @retval temp2:处理后的数据        temp2:
     */
 float BH1750_Read_Value(void)
 {

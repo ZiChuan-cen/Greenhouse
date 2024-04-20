@@ -555,6 +555,16 @@
               <FileType>1</FileType>
               <FilePath>..\Device\Zigbee.c</FilePath>
             </File>
+            <File>
+              <FileName>ESP.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Device\ESP.c</FilePath>
+            </File>
+            <File>
+              <FileName>MQTT.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Device\MQTT.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

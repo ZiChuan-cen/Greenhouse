@@ -6,7 +6,7 @@ u8 gReceFlag = 0;
 
 void JW01_Init(void)
 {
-    Usart1_Config();    
+    Usart1_Config();
 
     USART_ITConfig(USART1, USART_IT_RXNE, ENABLE);                              //开启接收中断
 
@@ -18,7 +18,7 @@ void JW01_Init(void)
     nitd.NVIC_IRQChannelSubPriority = 2;
     NVIC_Init(&nitd);
 
-    
+
 }
 
 uint8_t CO2_Data[6];                                        //存放接收到的数据包
@@ -70,10 +70,6 @@ uint16_t CO2_Get(void)
 
     gReceFlag = 0;      //数据接收位清零
     return CO2;
-
-
-
-
 
 }
 

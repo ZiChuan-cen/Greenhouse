@@ -14,6 +14,19 @@
 #include "OLED.h"
 #include "key.h"
 #include "Zigbee.h"
+#include "MQTT.h"
+
+
+
+u16 co2;
+float temp;
+long pressure;
+float illumin;
+int Tem_air = 0;
+int Hum_air = 0;
+float raindata;
+
+extern int data_ready;	  // 数据接收完毕
 
 
 
@@ -22,18 +35,16 @@ int main(void)
 	OLED_Init();
 	Zigbee_Init();
 	Key_Init();
-	//OLED_Display_On();
-	int Q;
 
 
     while (1)
     {
-		Q = 1234;
-		
-		OLED_ShowCHinese(1, 1, "与");
-		Delay_s(2);
-		OLED_Clear();
-		Delay_s(2);
+		if(data_ready == 1)
+		{
+			esp_PublishData();
+			
+			
+		}
 		
 
     }

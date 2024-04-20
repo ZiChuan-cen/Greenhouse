@@ -11,11 +11,6 @@ void Zigbee_Init(void);
 
 
 
-
-
-
-
-
-
+void SendSensorData(void);
 
 #endif
