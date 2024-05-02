@@ -31,10 +31,10 @@ const char *username = "master-control&i3umqznXrDS";
 const char *passwd = "B39894633F9DBB8A5464057BA5E4B88AE40378D8";
 const char *Url = "i3umqznXrDS.iot-as-mqtt.cn-shanghai.aliyuncs.com";
 const char *pubtopic = "/sys/i3umqznXrDS/master-control/thing/event/property/post";           //发布
-const char *subtopic = "/sys/i3umqznXrDS/master-control/thing/event/property/post_reply";     //订阅
+const char *subtopic = "/sys/i3umqznXrDS/master-control/thing/service/property/set";     //订阅
 
 
-//func1到func4为云平台上设备标识符
+//func1到func7为云平台上设备标识符
 const char *func1 = "CO2Content";              //bool
 const char *func2 = "SoilTemperature";         //float
 const char *func3 = "Atmosphere";      //int
@@ -43,6 +43,15 @@ const char *func5 = "CurrentTemperature";         //float
 const char *func6 = "mhumi";      //int
 const char *func7 = "SoilMoisture";      //int
 
+/*
+func1, co2, 
+func2, temp, 
+func3, pressure, 
+func4, illumin, 
+func5, Tem_air, 
+func6, Hum_air, 
+func7, raindata
+*/
 
 
 char esp_Init(void)
@@ -95,7 +104,7 @@ void esp_PublishData(void)
     sprintf(topic, "%s/%s", pubtopic, func1); // 拼接发布的主题
 
     char payload[200];
-    sprintf(payload, "{\"%s\":%d,\"%s\":%.2f,\"%s\":%ld,\"%s\":%.2f,\"%s\":%d,\"%s\":%d,\"%s\":%.2f}", 
+    sprintf(payload, "{\"%s\":%d,\"%s\":%.2f,\"%s\":%ld,\"%s\":%.2f,\"%s\":%d,\"%s\":%d,\"%s\":%.2f}",
             func1, co2, func2, temp, func3, pressure, func4, illumin, func5, Tem_air, func6, Hum_air, func7, raindata);
 
     char cmd[500];
