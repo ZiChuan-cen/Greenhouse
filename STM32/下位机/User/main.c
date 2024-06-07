@@ -21,37 +21,36 @@
 #include "Zigbee.h"
 
 //********************************* 全局变量 *********************************//
-u16 co2;            //空气co2浓度   ppm
-float temp;         //土壤温度
-long pressure;      //大气压
-float illumin;      //光照量
+u16 co2 = 440;            //空气co2浓度   ppm
+float temp = 25.00;         //土壤温度
+long pressure = 1000;      //大气压
+float illumin = 500.00;      //光照量
 
 DHT11Data_TypeDef dht11_data = {0};             //存放温湿度传感器返回的值
-int Tem_air = 0;
-int Hum_air = 0;
-float raindata;
+int Tem_air = 20;
+int Hum_air = 15;
+float raindata = 20;
 
 
-static void BSP_Init(void);
+//static void BSP_Init(void);
 
 int main(void)
 {
-    BSP_Init();
-
+    BMP_Init();
+    BH1750_Init();
+    Soil_Hum_Init();
+    JW01_Init();
+    Usart1_Config();
+    Zigbee_Init();
+    DS18B20_Init();
     DS18B20_Start();
-
-
-
+	BMP_ReadCalibrationData();
 
     while (1)
     {
-
-        BMP_ReadCalibrationData();
+        BMP_UncompemstatedToTrue();
         Dht11_ReadData(&dht11_data);
         DHT11_Check();
-
-
-
 
         co2 = CO2_Get();
         temp = DS18B20_Get_Temp();
@@ -62,6 +61,8 @@ int main(void)
         raindata = (float)(Get_Adc_Average(5, 20)) * (3.3 / 4096);
 		
 		SendSensorData();
+		//printf("111\r\n");
+		Delay_s(10);
 
 
 
@@ -69,22 +70,22 @@ int main(void)
 }
 
 
-static void BSP_Init(void)
-{
-    BMP_Init();
+//static void BSP_Init(void)
+//{
+//    BMP_Init();
 
-    BH1750_Init();
+//    BH1750_Init();
 
-    Soil_Hum_Init();
+//    Soil_Hum_Init();
 
-    JW01_Init();
+//    JW01_Init();
 
-    Usart1_Config();
+//    Usart1_Config();
 
-    Zigbee_Init();
+//    Zigbee_Init();
 
-    DS18B20_Init();
+//    DS18B20_Init();
 
 
-}
+//}
 

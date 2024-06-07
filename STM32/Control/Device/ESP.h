@@ -19,8 +19,9 @@
 
 
 void ESP_GPIO_Init(void);
-char *ESP_GetString(void);
-void ESP_SendString(char *str);
+
+void Serial_SendByte(uint8_t Byte);
+void SendATCommand(const char *format, ...);
 
 
 

@@ -7,9 +7,10 @@
 
   <Targets>
     <Target>
-      <TargetName>主控板</TargetName>
+      <TargetName>Control</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
+      <pArmCC>5060528::V5.06 update 5 (build 528)::ARMCC</pArmCC>
       <pCCUsed>5060528::V5.06 update 5 (build 528)::ARMCC</pCCUsed>
       <uAC6>0</uAC6>
       <TargetOption>
@@ -138,7 +139,7 @@
           </Flash1>
           <bUseTDR>1</bUseTDR>
           <Flash2>BIN\UL2CM3.DLL</Flash2>
-          <Flash3>"" ()</Flash3>
+          <Flash3></Flash3>
           <Flash4></Flash4>
           <pFcarmOut></pFcarmOut>
           <pFcarmGrp></pFcarmGrp>
@@ -541,21 +542,6 @@
           <GroupName>Device</GroupName>
           <Files>
             <File>
-              <FileName>key.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Device\key.c</FilePath>
-            </File>
-            <File>
-              <FileName>OLED.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Device\OLED.c</FilePath>
-            </File>
-            <File>
-              <FileName>Zigbee.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Device\Zigbee.c</FilePath>
-            </File>
-            <File>
               <FileName>ESP.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Device\ESP.c</FilePath>
@@ -564,6 +550,26 @@
               <FileName>MQTT.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Device\MQTT.c</FilePath>
+            </File>
+            <File>
+              <FileName>Zigbee.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Device\Zigbee.c</FilePath>
+            </File>
+            <File>
+              <FileName>key.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Device\key.c</FilePath>
+            </File>
+            <File>
+              <FileName>TFT.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Device\TFT.c</FilePath>
+            </File>
+            <File>
+              <FileName>IO.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Device\IO.c</FilePath>
             </File>
           </Files>
         </Group>

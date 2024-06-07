@@ -169,10 +169,12 @@ short DS18B20_Get_Temp(void)
     tem = TH;                   //获得高八位
     tem <<= 8;
     tem += TL;                  //获得底八位
-    tem = (float)tem * 0.625;   //转换
-    if (temp)
+    tem = (float)tem * 6.25;   //转换
+	
+    if (tem)
     {
-        return tem;             //返回温度值
+		float result = tem / 100.0; // 将整数转换为小数
+        return result;             //返回温度值
     }
     else return -tem;
 }

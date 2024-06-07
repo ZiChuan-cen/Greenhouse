@@ -46,7 +46,7 @@ void SendSensorData(void)
     char buffer[200];
 
     // 格式化传感器数据为字符串
-    sprintf(buffer, "CO2: %d ppm, Temp: %.2f C, Pressure: %ld Pa, Illumination: %.2f lux, Air Temp: %d C, Air Humidity: %d %%, Rain: %.2f mm",
+    sprintf(buffer, "CO2: %d, Temp: %.2f, Pressure: %ld, Illumination: %.2f, Air Temp: %d, Air Humidity: %d, Rain: %.2f\r\n",
             co2, temp, pressure, illumin, Tem_air, Hum_air, raindata);
 
     // 通过串口发送字符串
