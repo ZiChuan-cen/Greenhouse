@@ -44,7 +44,7 @@ int main(void)
     Zigbee_Init();
     DS18B20_Init();
     DS18B20_Start();
-    BMP_ReadCalibrationData();
+	BMP_ReadCalibrationData();
 
     while (1)
     {
@@ -59,10 +59,10 @@ int main(void)
         Tem_air = dht11_data.Tem;
         Hum_air = dht11_data.Hum;
         raindata = (float)(Get_Adc_Average(5, 20)) * (3.3 / 4096);
-
-        SendSensorData();
-        //printf("111\r\n");
-        Delay_s(10);
+		
+		SendSensorData();
+		//printf("111\r\n");
+		Delay_s(10);
 
 
 

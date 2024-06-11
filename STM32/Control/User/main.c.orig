@@ -48,7 +48,7 @@ int main(void)
 {
     NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
     //TFT_GPIO_Init();
-    //TFT_init();
+	//TFT_init();
     ESP_GPIO_Init();
     IO_Init();
     //Usart1_Config();
@@ -62,35 +62,23 @@ int main(void)
         //OLED_ShowNum(2,1,Judge,1);
     }
     while (Judge); //连接阿里云直到成功
-
-
+	
+	
     while (1)
     {
         while (data_ready != 0)
         {
             data_dispose();
-            if(Tem_air > Air_tem_H)
-            {
-                Fan_ON();
-                Bee_ON();
-                Fan_Flag = 1;
-            } else {
-                Fan_OFF();
-                Bee_OFF();
-                Fan_Flag = 0;
-            }
-
-            if(raindata < raindata_H)
-            {
-                Motor_ON();
-                Bee_ON();
-                Motor_Flag = 1;
-            } else {
-                Motor_OFF();
-                Bee_OFF();
-                Motor_Flag = 0;
-            }
-
+			if(Tem_air > Air_tem_H)
+			{
+				Fan_ON();Bee_ON();Fan_Flag = 1;				
+			}else{Fan_OFF();Bee_OFF();Fan_Flag = 0;}
+			
+			if(raindata < raindata_H)
+			{
+				Motor_ON();Bee_ON();Motor_Flag = 1;				
+			}else{Motor_OFF();Bee_OFF();Motor_Flag = 0;}
+			
             //    printf("CO2: %d\n", co2_F);
             //    printf("Temperature: %.2f\n", temp);
             //    printf("Pressure: %ld\n", pressure);
